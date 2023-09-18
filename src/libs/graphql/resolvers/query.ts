@@ -5,8 +5,10 @@ const users: QueryResolvers["users"] = (parent, args, contextValue, info) => {
     profile: true,
     posts: {
       where: {
-        published: args.published
-      }
-    }
-  })
-}
+        published: args.published,
+      },
+    },
+  });
+};
+
+export { users };
