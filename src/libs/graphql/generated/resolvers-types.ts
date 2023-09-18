@@ -37,7 +37,7 @@ export type MutationCreateDataArgs = {
 
 
 export type MutationCreatePostArgs = {
-  authorId: Scalars['Int']['input'];
+  author_id: Scalars['Int']['input'];
   content?: InputMaybe<Scalars['String']['input']>;
   title: Scalars['String']['input'];
 };
@@ -62,7 +62,7 @@ export type MutationUpdateProfileArgs = {
 
 
 export type MutationUpsertPostArgs = {
-  authorId: Scalars['Int']['input'];
+  author_id: Scalars['Int']['input'];
   content?: InputMaybe<Scalars['String']['input']>;
   id: Scalars['Int']['input'];
   title: Scalars['String']['input'];
@@ -70,7 +70,7 @@ export type MutationUpsertPostArgs = {
 
 export type Post = {
   __typename?: 'Post';
-  authorId: Scalars['Int']['output'];
+  author_id: Scalars['Int']['output'];
   content?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   published?: Maybe<Scalars['Boolean']['output']>;
@@ -81,7 +81,7 @@ export type Profile = {
   __typename?: 'Profile';
   bio?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
-  userId: Scalars['Int']['output'];
+  user_id: Scalars['Int']['output'];
 };
 
 export type Query = {
@@ -201,15 +201,15 @@ export type ResolversParentTypes = ResolversObject<{
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = ResolversObject<{
   createData?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationCreateDataArgs, 'email' | 'name' | 'title'>>;
-  createPost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationCreatePostArgs, 'authorId' | 'title'>>;
+  createPost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationCreatePostArgs, 'author_id' | 'title'>>;
   deletePost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationDeletePostArgs, 'id'>>;
   updatePost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationUpdatePostArgs, 'content' | 'id' | 'published'>>;
   updateProfile?: Resolver<Maybe<ResolversTypes['Profile']>, ParentType, ContextType, RequireFields<MutationUpdateProfileArgs, 'bio' | 'id'>>;
-  upsertPost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationUpsertPostArgs, 'authorId' | 'id' | 'title'>>;
+  upsertPost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationUpsertPostArgs, 'author_id' | 'id' | 'title'>>;
 }>;
 
 export type PostResolvers<ContextType = any, ParentType extends ResolversParentTypes['Post'] = ResolversParentTypes['Post']> = ResolversObject<{
-  authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  author_id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   published?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
@@ -220,7 +220,7 @@ export type PostResolvers<ContextType = any, ParentType extends ResolversParentT
 export type ProfileResolvers<ContextType = any, ParentType extends ResolversParentTypes['Profile'] = ResolversParentTypes['Profile']> = ResolversObject<{
   bio?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  userId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  user_id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 

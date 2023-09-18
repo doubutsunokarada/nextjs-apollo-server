@@ -9,7 +9,7 @@ type User {
 type Profile {
   id: ID!
   bio: String
-  userId: Int!
+  user_id: Int!
 }
 
 type Post {
@@ -17,7 +17,7 @@ type Post {
   title: String!
   content: String
   published: Boolean
-  authorId: Int!
+  author_id: Int!
 }
 
 type Query {
@@ -32,8 +32,8 @@ type Mutation {
     content: String
     bio: String
   ): User
-  createPost(authorId: Int!, title: String!, content: String): Post
-  upsertPost(id: Int!, authorId: Int!, title: String!, content: String): Post
+  createPost(author_id: Int!, title: String!, content: String): Post
+  upsertPost(id: Int!, author_id: Int!, title: String!, content: String): Post
   updatePost(id: Int!, content: String!, published: Boolean!): Post
   deletePost(id: Int!): Post
   updateProfile(id: Int!, bio: String!): Profile
